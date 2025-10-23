@@ -1,221 +1,267 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Happy Birthday Kashvi — From Aditi 💖</title>
   <style>
-    :root{
-      --bg:#0f1530; --card:#12203b; --accent:#ff6b9a; --glass: rgba(255,255,255,0.06);
-    }
-    *{box-sizing:border-box;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
-    html,body{height:100%;margin:0;background:linear-gradient(135deg,var(--bg) 0%, #0b1a2b 100%);color:#fff}
-    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-
-    .card{
-      width:900px;max-width:98vw;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.04)
+    :root {
+      --bg: #0f1530;
+      --card: #12203b;
+      --accent: #ff6b9a;
+      --glass: rgba(255, 255, 255, 0.06);
     }
 
-    header{display:flex;gap:16px;align-items:center}
-    .avatar{
-      height:84px;width:84px;border-radius:14px;background:conic-gradient(from 120deg,#ff9db1,#ffd37a,#8be9ff,#c1a0ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#07102a;font-size:20px;flex:0 0 84px
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif
     }
 
-    h1{margin:0;font-size:28px}
-    p.lead{margin:6px 0 0;color:#cfe3ff}
-
-    .main{
-      display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px;align-items:start
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: linear-gradient(135deg, var(--bg) 0%, #0b1a2b 100%);
+      color: #fff
     }
 
-    .message{
-      background:var(--glass);padding:20px;border-radius:12px;min-height:220px;display:flex;flex-direction:column;justify-content:center;gap:12px;border:1px solid rgba(255,255,255,0.02)
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px
     }
 
-    .big-msg{font-size:20px;line-height:1.25}
-    .from{font-size:14px;opacity:0.9;margin-top:10px}
-
-    .side{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.02)
+    .card {
+      width: 950px;
+      max-width: 98vw;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.04)
     }
 
-    .btn{
-      background:linear-gradient(90deg,var(--accent),#ff9e52);border:0;padding:12px 16px;border-radius:10px;color:#07102a;font-weight:700;cursor:pointer;box-shadow:0 10px 20px rgba(255,107,154,0.12);transition:transform .14s ease
+    header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center
     }
-    .btn:active{transform:translateY(2px)}
 
-    .small{font-size:13px;color:#dbe9ff;text-align:center}
+    .avatar-img {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(255, 107, 154, 0.4);
+    }
 
-    .sparkle{position:absolute;inset:0;pointer-events:none}
+    h1 {
+      margin: 10px 0 0;
+      font-size: 30px
+    }
 
-    /* hidden message reveal */
-    .hidden-msg{opacity:0;transform:translateY(12px) scale(.98);transition:all .6s cubic-bezier(.2,.9,.25,1);}
-    .hidden-msg.show{opacity:1;transform:none}
+    p.lead {
+      margin: 6px 0 0;
+      color: #cfe3ff
+    }
 
-    footer{margin-top:18px;font-size:13px;opacity:0.9;display:flex;justify-content:space-between;align-items:center}
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px;
+      margin-top: 20px;
+      align-items: start
+    }
 
-    /* hearts animation */
-    .hearts{position:absolute;right:-20px;bottom:-20px;width:260px;height:260px;pointer-events:none}
-    .heart{position:absolute;width:28px;height:28px;background:var(--accent);transform:rotate(45deg);left:50%;top:50%;border-radius:4px;opacity:0.9}
-    .heart:before,.heart:after{content:'';position:absolute;width:28px;height:28px;background:var(--accent);border-radius:50%}
-    .heart:before{top:-14px}
-    .heart:after{left:-14px}
+    .photo-box {
+      background: var(--glass);
+      padding: 12px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.05)
+    }
 
-    @media(max-width:840px){.main{grid-template-columns:1fr;}.side{order:-1}}
+    .photo-box img {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
 
+    .photo-box:hover img {
+      transform: scale(1.05)
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 4px 0;
+      border-radius: 0 0 14px 14px
+    }
+
+    .message {
+      background: var(--glass);
+      padding: 20px;
+      border-radius: 12px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.02)
+    }
+
+    .big-msg {
+      font-size: 20px;
+      line-height: 1.25
+    }
+
+    .from {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-top: 10px
+    }
+
+    .side {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      padding: 18px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.02)
+    }
+
+    .btn {
+      background: linear-gradient(90deg, var(--accent), #ff9e52);
+      border: 0;
+      padding: 12px 16px;
+      border-radius: 10px;
+      color: #07102a;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(255, 107, 154, 0.12);
+      transition: transform .14s ease
+    }
+
+    .btn:active {
+      transform: translateY(2px)
+    }
+
+    .small {
+      font-size: 13px;
+      color: #dbe9ff;
+      text-align: center
+    }
+
+    .hidden-msg {
+      opacity: 0;
+      transform: translateY(12px) scale(.98);
+      transition: all .6s cubic-bezier(.2, .9, .25, 1);
+    }
+
+    .hidden-msg.show {
+      opacity: 1;
+      transform: none
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 13px;
+      opacity: 0.9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: center
+    }
+
+    @media(max-width:840px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .side {
+        order: -1
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <div class="card" role="region" aria-label="Birthday wish from Aditi to Kashvi">
-      <div class="sparkle" id="sparkleCanvas"></div>
+    <div class="card">
       <header>
-        <div class="avatar">A & K</div>
+        <img src="hi.jpg" alt="Aditi and Kashvi" class="avatar-img" />
         <div>
           <h1>Happy Birthday, <span style="color:var(--accent)">Kashvi</span> 🎉</h1>
-          <p class="lead">A little surprise made with love by <strong>Aditi</strong> — best friends forever.</p>
+          <p class="lead">A surprise made with love by <strong>Aditi</strong> — your best friend forever 💕</p>
         </div>
       </header>
 
       <div class="main">
         <div class="message">
-          <div class="big-msg" id="messagePreview">Wanna see your surprise? Click the button on the right — I saved my favorite memories and a special wish just for you. 💕</div>
+          <div class="photo-box">
+            <img src="hi2.jpg" alt="Best Friends Forever" />
+            <div class="caption">Best memories together ✨</div>
+          </div>
 
+          <div class="big-msg" id="messagePreview">Click below to reveal a heartfelt surprise message! 💌</div>
           <div class="hidden-msg" id="hiddenMessage">
             <h2 style="margin:0 0 6px">Dear Kashvi,</h2>
-            <p style="margin:0 0 8px">Happy Birthday to the kindest, funniest, bravest friend I could ask for. You've coloured my life with laughter, late-night talks, and the kind of trust that lasts a lifetime. Today I wish you endless joy, big dreams that come true, and a year full of adventures. Stay sparkling — always.</p>
-            <div class="from">With all my love, <strong>Aditi</strong> 💖</div>
+            <p style="margin:0 0 8px">Happy Birthday to my soul sister, my partner in laughter, and my forever friend.
+              You make every moment special and every memory brighter. I hope your day is filled with love, cake, and
+              all your favorite songs. 💖</p>
+            <div class="from">Love always, <strong>Aditi</strong> 💫</div>
           </div>
 
-          <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;align-items:center">
-            <button class="btn" id="revealBtn">Open Your Surprise</button>
-            <button class="btn" id="playTune" style="background:linear-gradient(90deg,#a3f0ff,#c1a0ff)">Play a Birthday Tune</button>
-            <div style="flex:1;text-align:right"><span class="small">Click the confetti too — it's shy 😉</span></div>
-          </div>
+          <button class="btn" id="revealBtn">Open Your Surprise 🎁</button>
         </div>
 
         <aside class="side">
           <div style="text-align:center">
-            <div style="font-weight:800;font-size:22px;color:var(--accent)">Surprise Box</div>
-            <div class="small">Memories • Giggles • Hopes</div>
+            <div style="font-weight:800;font-size:22px;color:var(--accent)">Friendship Gallery</div>
+            <div class="small">Captured Smiles & Pure Joy</div>
           </div>
-
-          <div style="width:100%;display:flex;gap:8px">
-            <button class="btn" id="miniConfetti">Confetti</button>
-            <button class="btn" id="sendHug" style="background:linear-gradient(90deg,#ffcf8a,#ffd6e0)">Send a Virtual Hug</button>
+          <div class="photo-box">
+            <img src="hi1.jpg" alt="Birthday Celebration" />
+            <div class="caption">Birthday vibes 💐</div>
           </div>
-
-          <div style="margin-top:8px;font-size:13px;color:#cfe3ff;opacity:0.95;text-align:center">Age is just a number — but cake is real. 🍰</div>
         </aside>
       </div>
 
       <footer>
         <div>Made with ❤️ by Aditi</div>
-        <div style="opacity:0.8">Best Friend Forever • ️</div>
+        <div>Best Friends Forever 👯‍♀️</div>
       </footer>
-
-      <div class="hearts" id="heartsLayer" aria-hidden="true"></div>
-
     </div>
   </div>
 
   <script>
-    // simple confetti particles using canvas
-    function makeConfetti(container){
-      const c = document.createElement('canvas');
-      c.style.position='absolute';c.style.inset='0';c.style.pointerEvents='none';
-      container.appendChild(c);
-      const ctx = c.getContext('2d');
-      function resize(){c.width = container.clientWidth; c.height = container.clientHeight}
-      resize(); window.addEventListener('resize', resize);
-
-      const pieces = [];
-      function spawn(){
-        for(let i=0;i<80;i++){
-          pieces.push({x:Math.random()*c.width,y:-10,vy:1+Math.random()*6, vx:(Math.random()-0.5)*4,size:6+Math.random()*8, r:Math.random()*360, s:Math.random()*1.2, color:["#ff6b9a","#ffd37a","#8be9ff","#c1a0ff"][Math.floor(Math.random()*4)]})
-        }
-      }
-      let raf;
-      function frame(){
-        ctx.clearRect(0,0,c.width,c.height);
-        for(let i=pieces.length-1;i>=0;i--){
-          const p=pieces[i]; p.x += p.vx; p.y += p.vy; p.vy += 0.05; p.r += 5*p.s;
-          ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r*Math.PI/180);
-          ctx.fillStyle = p.color; ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size);
-          ctx.restore();
-          if(p.y>c.height+30) pieces.splice(i,1);
-        }
-        if(pieces.length>0) raf = requestAnimationFrame(frame); else cancelAnimationFrame(raf);
-      }
-      return {spawn(){spawn(); cancelAnimationFrame(raf); frame();}}
-    }
-
-    const card = document.querySelector('.card');
     const revealBtn = document.getElementById('revealBtn');
-    const hidden = document.getElementById('hiddenMessage');
-    const messagePreview = document.getElementById('messagePreview');
-    const heartsLayer = document.getElementById('heartsLayer');
-
-    const conf = makeConfetti(document.querySelector('.sparkle'));
-    const confSide = makeConfetti(document.querySelector('.side'));
-
-    revealBtn.addEventListener('click', ()=>{
-      hidden.classList.add('show');
-      messagePreview.style.opacity = '0.6';
-      conf.spawn();
-      createHearts();
+    const hiddenMsg = document.getElementById('hiddenMessage');
+    revealBtn.addEventListener('click', () => {
+      hiddenMsg.classList.add('show');
     });
-
-    document.getElementById('miniConfetti').addEventListener('click', ()=>confSide.spawn());
-    document.getElementById('sendHug').addEventListener('click', ()=>{
-      alert('🤗 A big warm hug sent to Kashvi from Aditi!');
-    });
-
-    // play a cheerful tune using WebAudio
-    document.getElementById('playTune').addEventListener('click', ()=>{
-      try{
-        const ctx = new (window.AudioContext||window.webkitAudioContext)();
-        const now = ctx.currentTime;
-        const notes = [523.25, 659.25, 783.99, 523.25, 659.25, 783.99]; // C5, E5, G5
-        notes.forEach((f,i)=>{
-          const o = ctx.createOscillator(); const g = ctx.createGain();
-          o.type='sine'; o.frequency.value=f; g.gain.value=0.0001;
-          o.connect(g); g.connect(ctx.destination);
-          o.start(now + i*0.25); g.gain.exponentialRampToValueAtTime(0.12, now + i*0.25 + 0.02);
-          g.gain.exponentialRampToValueAtTime(0.0001, now + i*0.25 + 0.23);
-          o.stop(now + i*0.25 + 0.26);
-        });
-      }catch(e){console.warn('audio failed',e)}
-    });
-
-    // little hearts generator
-    function createHearts(){
-      for(let i=0;i<12;i++){
-        const h = document.createElement('div'); h.className='heart';
-        h.style.left = (20+Math.random()*80)+'%';
-        h.style.bottom = (-30-Math.random()*40)+'px';
-        h.style.transform = `rotate(45deg) scale(${0.7+Math.random()*1.2})`;
-        heartsLayer.appendChild(h);
-        (function(el,delay){
-          requestAnimationFrame(()=>{
-            el.animate([
-              {transform: `translateY(0) rotate(45deg) scale(${1+Math.random()*0.6})`, opacity:1},
-              {transform: `translateY(-${120+Math.random()*160}px) rotate(45deg) scale(.6)`, opacity:0}
-            ],{duration:1800+Math.random()*1200, easing:'cubic-bezier(.2,.9,.25,1)', delay: delay});
-            setTimeout(()=>el.remove(), 2000+Math.random()*1500);
-          });
-        })(h, i*60);
-      }
-    }
-
-    // make card clickable for extra confetti
-    card.addEventListener('click', (e)=>{
-      if(e.target.tagName !== 'BUTTON') conf.spawn();
-    });
-
-    // accessibility: reveal message with keyboard
-    revealBtn.addEventListener('keyup', (e)=>{if(e.key==='Enter') revealBtn.click()});
-
   </script>
 </body>
+
 </html>
